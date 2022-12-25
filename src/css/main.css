@@ -200,7 +200,7 @@ p {
   padding: 10px 10px;
   font-size: 22px;
   color: rgb(255, 255, 255);
-  background-color: rgba(252, 230, 30, 0.719);
+  background-color: rgba(239, 255, 13, 0.377);
   border-radius: 5px;
   border: none;
   -webkit-transition: all 300ms ease-in-out;
@@ -209,14 +209,11 @@ p {
 }
 .search-form__btn:hover,
 .load-more:hover {
-  background-color: rgba(255, 174, 0, 0.884);
+  background-color: rgba(190, 252, 45, 0.884);
 }
 .search-form__btn:focus,
 .load-more:focus {
   background-color: rgba(0, 250, 21, 0.8);
-  outline: 3px solid rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 0 6px rgba(0, 255, 21, 0.8);
-          box-shadow: 0 0 0 6px rgba(0, 255, 21, 0.8);
 }
 
 .search-form__input {
@@ -229,11 +226,42 @@ p {
   -webkit-transition: all 350ms ease-in-out;
   transition: all 350ms ease-in-out;
 }
-.search-form__input:focus-within {
+.search-form__input:focus {
   outline: 3px solid rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 0 6px rgba(255, 204, 62, 0.8);
-          box-shadow: 0 0 0 6px rgba(255, 204, 62, 0.8);
+  -webkit-box-shadow: 0 0 0 6px rgba(165, 255, 62, 0.658);
+          box-shadow: 0 0 0 6px rgba(165, 255, 62, 0.658);
 }
 .search-form__input:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.go-up {
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 33px;
+  width: 90px;
+  color: rgb(0, 255, 179);
+  border-radius: 12px;
+  background-color: rgba(79, 79, 80, 0.144);
+  cursor: pointer;
+  -webkit-transition: color 350ms ease-in-out, background-color 350ms ease-in-out, -webkit-box-shadow 350ms ease-in-out;
+  transition: color 350ms ease-in-out, background-color 350ms ease-in-out, -webkit-box-shadow 350ms ease-in-out;
+  transition: color 350ms ease-in-out, background-color 350ms ease-in-out, box-shadow 350ms ease-in-out;
+  transition: color 350ms ease-in-out, background-color 350ms ease-in-out, box-shadow 350ms ease-in-out, -webkit-box-shadow 350ms ease-in-out;
+}
+.go-up:hover {
+  color: rgb(234, 253, 65);
+  -webkit-box-shadow: 0 6 6 1px rgba(0, 0, 0, 0.116);
+          box-shadow: 0 6 6 1px rgba(0, 0, 0, 0.116);
+  background-color: rgba(41, 220, 252, 0.664);
 }/*# sourceMappingURL=main.css.map */

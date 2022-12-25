@@ -27,15 +27,11 @@ export default class ImagesApiService {
 
     try {
       const response = await axios.get(url);
-      this.incrementPage();
+      this.page += 1;
       return response.data;
     } catch (error) {
       console.warn(`${error}`);
     }
-  }
-
-  incrementPage() {
-    this.page += 1;
   }
 
   resetPage() {

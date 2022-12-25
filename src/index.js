@@ -7,6 +7,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const refs = {
   galleryContainer: document.querySelector('.gallery'),
   searchForm: document.querySelector('.search-form'),
+  toUpBtn: document.querySelector('.go-up'),
 };
 const loadMoreBtn = new LoadMoreBtn({
   selector: '.load-more',
@@ -18,6 +19,8 @@ const gallery = new SimpleLightbox('.gallery a');
 
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
+refs.toUpBtn.addEventListener('click', onUpScroll);
+window.addEventListener('scroll', onScrollToUpBtn);
 
 function onSearch(e) {
   e.preventDefault();
@@ -35,7 +38,7 @@ function onSearch(e) {
     return erorrQuery();
   }
   imagesApiService.fetchArticles().then(({ hits, totalHits }) => {
-  clearGelleryContainer();  
+  refs.galleryContainer.innerHTML = '';  
   accessQuery(totalHits);
   appendArticlesMarkup({ hits, totalHits });
   });
@@ -123,6 +126,19 @@ function erorrQuery() {
   );
 }
 
-function clearGelleryContainer() {
-  refs.galleryContainer.innerHTML = '';
+function onScrollToUpBtn() {
+  const offsetTrigger = 100;
+  const pageOffset = window.pageYOffset;
+
+  pageOffset > offsetTrigger
+    ? refs.toUpBtn.classList.remove('is-hidden')
+    : refs.toUpBtn.classList.add('is-hidden');
 }
+
+function onUpScroll() {
+  window.scrollTo({
+    top: 2,
+    behavior: 'smooth',
+  });
+}
+
