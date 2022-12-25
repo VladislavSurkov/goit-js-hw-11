@@ -238,7 +238,7 @@ p {
 .go-up {
   position: fixed;
   bottom: 10px;
-  right: 5px;
+  right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
